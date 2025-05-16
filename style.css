@@ -1,25 +1,70 @@
-main{
-    display: flex;
 
-}
-h1{
-    margin-top: 15%;
-    text-align: center;
-    font-family:sans-serif ;
-    font-size: 50px;
-}
-h3{
-    text-align: center;
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-button{
-    height: 50px;
-    width: 90px;
-    background-color: red;
-    color: white;
-    position: relative;
-    left:42%;
-    font-size: 25px;
-    margin-top: 3%;
-    border-radius: 20px;
+/* Body styling */
+body {
+  background-color: #121212; /* Darker black for less harshness */
+  color: #fff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+/* Center container */
+.center {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  width: 100%;
+  gap: 1rem;
+  padding: 1rem;
+  font-size: clamp(2rem, 5vw, 4rem);
+  text-align: center;
+  user-select: none;
+}
+
+/* Clock display */
+#clock {
+  background: linear-gradient(135deg, #ff7e00, #ffb347);
+  color: #121212;
+  font-weight: 700;
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  padding: 1rem 3rem;
+  border-radius: 15px;
+  box-shadow: 0 8px 15px rgba(255, 126, 0, 0.5);
+  width: min(90vw, 400px);
+  text-align: center;
+  letter-spacing: 0.15em;
+  user-select: none;
+  transition: background 0.3s ease;
+  cursor: default;
+}
+
+/* Optional: subtle hover effect on clock */
+#clock:hover {
+  background: linear-gradient(135deg, #ff9c1a, #ffc466);
+  box-shadow: 0 12px 20px rgba(255, 156, 26, 0.7);
+}
+
+/* Responsive text size for smaller devices */
+@media (max-width: 400px) {
+  .center {
+    font-size: clamp(1.5rem, 8vw, 3rem);
+  }
+
+  #clock {
+    font-size: clamp(2rem, 8vw, 3.5rem);
+    padding: 0.8rem 2rem;
+    width: 90vw;
+  }
 }
